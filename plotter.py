@@ -2,8 +2,15 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 
+'''
+This file contains functions which 
+-Store scrapped data in ObjectData.csv
+-Read data from the csv and store it as a list
+-Extract filtered data and analyze it
+-Plot filtered data scatter
+'''
 def store(choice):
-
+    '''This function stores extracted data in a csv by running the required scraper and importing the data list generated'''
     with open('ObjectData.csv', 'w', newline='', encoding='UTF8') as f:
         writer = csv.writer(f)
         writer.writerow(["Title", "Price", "Stars", "Ratings", "Discount"])
@@ -21,6 +28,7 @@ def store(choice):
                 writer.writerow(list(mobile_list[i].values()))
 
 def read():
+    '''This function reads the data from the csv and stores it as a list of lists.'''
     data = []
     with open('ObjectData.csv', 'r') as f:
         reader = csv.reader(f)
@@ -30,12 +38,14 @@ def read():
     return data
 
 def desc(pmax, rmin):
+    '''This function filters the extracted data based on prices and ratings and produces an analysis of the data'''
     df = pd.read_csv('ObjectData.csv')
     rdf = df.loc[(df["Price"]<=pmax) & (df["Ratings"]>=rmin)]
     a = str(rdf.describe())
     return a
 
 def plot(pmax, rmin):
+    '''This function plots a Ratings-Price Scatter based on filtered data extracted from the CSV'''
     df = pd.read_csv('ObjectData.csv')
     rdf = df.loc[(df["Price"]<=pmax) & (df["Ratings"]>=rmin)]
     plt.style.use('seaborn')

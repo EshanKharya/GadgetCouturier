@@ -1,9 +1,12 @@
 #imports
 from bs4 import BeautifulSoup
 import requests
-
+'''
+This is the Webscrapper for Gaming Laptops
+'''
 
 #main
+#Producing the soup, just like the CasualLaptopScraper
 pg = "1"
 url = f"https://www.flipkart.com/search?q=gaming+laptop&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page={pg}"
 page = requests.get(url)
@@ -26,6 +29,7 @@ def str_to_flt(s):
     return s_
 
 def object_crawler(obj_list):
+    '''Crawls through every object in the given list, extracts title, price, stars, ratings and discounts and stores it as a dictionary. THis dictionary is appended onto the output list'''
     outl = []
     for obj in obj_list:
         d = {}

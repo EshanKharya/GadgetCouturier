@@ -13,6 +13,9 @@ bg_label = Label(root, image=b_g).grid(row = 0, column = 0, columnspan=1200, row
 
 
 def casual():
+    '''
+    Casual Laptop Filtering Screen
+    '''
     casual_window = Toplevel()
     casual_window.geometry("800x650")
     bg_label2 = Label(casual_window, image=b_g)
@@ -20,6 +23,9 @@ def casual():
     
 
     def table():
+        '''
+        Casual Laptop Table Window and Scatter Generation
+        '''
         loadinglabel = Label(casual_window, text="Loading Data...", font=('Helvetica 18'), bg='#000099', fg='yellow').grid(row=370, column=400)
 
         rrange=rating_range.get()
@@ -76,6 +82,9 @@ def casual():
     confirmbutton = Button(casual_window, text="Confirm", padx=20, command=table).grid(row = 320, column = 400)
 
 def gaming():
+    '''
+    Gaming Laptop FIltering Screen
+    '''
     gaming_window = Toplevel()
     gaming_window.geometry("800x650")
     bg_label2 = Label(gaming_window, image=b_g)
@@ -83,6 +92,7 @@ def gaming():
     
 
     def table():
+        '''Gaming Laptop Table and Plot Generation'''
         loadinglabel = Label(gaming_window, text="Loading Data...", font=('Helvetica 18'), bg='#000099', fg='yellow').grid(row=370, column=400)
 
         rrange=rating_range.get()
@@ -139,6 +149,9 @@ def gaming():
     confirmbutton = Button(gaming_window, text="Confirm", padx=20, command=table).grid(row = 320, column = 400)
 
 def mobile():
+    '''
+    Mobiles Filter Window
+    '''
     mobile_window = Toplevel()
     mobile_window.geometry("800x650")
     bg_label2 = Label(mobile_window, image=b_g)
@@ -146,6 +159,7 @@ def mobile():
     
 
     def table():
+        '''Mobiles table and scatter genration'''
         loadinglabel = Label(mobile_window, text="Loading Data...", font=('Helvetica 18'), bg='#000099', fg='yellow').grid(row=370, column=400)
 
         rrange=rating_range.get()

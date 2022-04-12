@@ -2,8 +2,13 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 from plotter import store, read, desc, plot
-
+'''
+This file produces the table and scatter windows by using the functions of the plotter module
+'''
 def tablewin(choice, pmax, rmin):
+    '''
+    Calling this function generates the table and plot windows.
+    '''
     store(choice)
     database = read()
     twin = Tk()
